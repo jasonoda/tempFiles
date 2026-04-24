@@ -1,0 +1,234 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    overflow: hidden;
+}
+
+#feedback{
+    position: fixed;
+    display: none;
+    z-index:50000;
+    color:aliceblue;
+    background-color: rgb(28, 42, 48);
+}
+
+@font-face{
+    font-family: 'Hypatia';
+    src: url('src/fonts/Hypatia-Sans-Pro.ttf');
+    
+}
+
+#cardTest{
+    position: absolute;
+    transform: scale(0.4);
+    z-index: 15000;
+}
+
+#actionDiv{
+    position: absolute;
+    /* border: 1px blue solid; */
+    width: 100%;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+#accDiv{
+    position: absolute;
+    /* border: 1px blue solid; */
+    width: 100%;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+#mixer{
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    z-index:11110;
+    display: none;
+}
+
+#bgColor{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    /* display: none; */
+    height: 20px;
+    width: 100px;
+    margin:0px auto;
+    background-color: #125d66;
+    z-index: 5000;
+}
+
+#obColor{
+    position: absolute;
+    right: 0;
+    top: 40px;
+    /* display: none; */
+    height: 20px;
+    width: 100px;
+    margin:0px auto;
+    background-color: #57a6a8;
+    z-index: 5000;
+}
+
+#chColor{
+    position: absolute;
+    right: 0;
+    top: 60px;
+    /* display: none; */
+    height: 20px;
+    width: 100px;
+    margin:0px auto;
+    background-color: #3fe0ee;
+    z-index: 5000;
+}
+
+.type1b{
+    color: #eac88c;
+    font-family: "Hypatia";
+    font-size: 6pt;
+    letter-spacing: 2px;
+    text-align: center;
+    /* border: 1px red solid; */
+    z-index: 5000;
+}
+
+.type1d{
+    color: #eac88c;
+    font-family: "Hypatia";
+    font-size: 11pt;
+    letter-spacing: 2px;
+    text-align: center;
+    /* border: 1px red solid; */
+    pointer-events: none;
+    z-index: 5000;
+}
+
+.type1{
+    position: absolute;
+    color: white;
+    font-family: "Hypatia";
+    font-size: 8pt;
+    letter-spacing: 2px;
+    text-align: center;
+    /* border: 1px red solid; */
+    z-index: 5000;
+    pointer-events: none;
+}
+
+.type2{
+    position: absolute;
+    color: #eac88c;
+    font-family: "Hypatia";
+    font-size: 9pt;
+    letter-spacing: 2px;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+#noCardsDiv{
+    position: absolute;
+    top: 40%;
+    opacity: 0;
+    /* border: 1px blue solid; */
+    width: 100%;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+.type3{
+    /* position: absolute; */
+    
+    color: white;
+    font-family: "Hypatia";
+    font-size: 29pt;
+    text-align: center;
+    letter-spacing: 2px;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+#spotifyPlayer{
+    position: absolute;
+    bottom:0px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    /* border: 1px solid ; */
+    /* border-color: #eeeeee; */
+    z-index: 5000;
+    /* display: none; */
+}
+
+#playerBack{
+    position: absolute;
+    bottom:0px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    width: 320px;
+    height: 90px;
+    
+    border: 0px solid ;
+    z-index: 5000;
+    /* display: none; */
+}
+
+#playerBackImage{
+    position: absolute;
+}
+
+#useFont{
+    font-family: 'Hypatia';
+    font-size: 0pt;
+}
+
+#jodaLink{
+    position: absolute;
+    right: 46px;
+    bottom: 18px;
+    z-index: 10000;
+}
+
+#loadingImage{
+    position: fixed;
+    width: 252px;
+    height: 46px;
+    
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    z-index: 11000;
+
+    image-rendering: smooth ;
+}
+
+#loadingBack{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index:10000;
+    background-color: rgb(37, 34, 39);
+    /* display: none; */
+}
+
+#mycanvas{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index:5;
+    /* display: none; */
+}
+
+/* ---------------------------- orientation ---------------------------- */

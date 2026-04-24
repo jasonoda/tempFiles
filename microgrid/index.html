@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Schneider Electric - Microgrid</title>
+
+    <!--meta---------------------------------------------------------------------------------------------------------- -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <style> body { visibility: hidden;opacity: 0;}</style>
+
+<script defer src="./bundle.js"></script></head>
+
+<body>
+
+    <script> window.onload = function() { document.body.style.visibility = "visible"; document.body.style.opacity = "1"; document.body.style.transition = "opacity 0.3s ease-in"; }; </script>
+
+    <div id="feedback">asdf</div>
+
+    <div class="logoDiv">
+      <img id="logo" src="./src/images/logo.png">
+    </div>
+
+    <div id="learnMore">LEARN MORE</div>
+
+    <div id="bar">Grid Condition
+      <label class="switch" id="switch1">
+        <span class="slider"></span>
+      </label>
+      <span id="powerDiv" class="greenText">STABLE</span>
+    </div>
+
+    <div id="offDiv">In real-time, the switch from grid to microgrid takes ~250 milliseconds.</div>
+
+    <div id="intro">
+      <div class="introTitle">Select your grid condition</div>
+      <div class="introContainer">
+          <button class="introBtn" id="butStable">Grid is Stable</button>
+          <button class="introBtn" id="butOutage">Power Outage</button>
+      </div>
+    </div>
+
+    <!-- loading -->
+
+    <div id="loadingImage"></div>
+    <div id="loadingBack"></div>
+
+    <div id="banner">
+      <div id="greenBanner">
+        <div id="bannerText">EcoStruxure™ Microgrid Flex</div>
+        <div id="bannerText2">Standardized, validated, and scalable microgrid system, pre-tested for fast deployment.</div>
+      </div>
+      
+    </div>
+    
+    <!-- <div id="bannerLowText">Standardized, validated, and scalable microgrid system, pre-tested for fast deployment.</div> -->
+    <!-- <div id="bannerLowText">Schneider Electric’s Microgrid Flex offers a faster, simpler, and standardized microgrid system designed to reduce project time and enhance ROI. Each Microgrid Flex undergoes rigorous testing in our proprietary TVDA lab to ensure smooth installation and execution.</div> -->
+
+    <div id="prodContainer">
+      <img id="closex" src="./src/images/closeX.svg"/>
+      <div id="nextBut">NEXT</div>
+      <div id="prodBanner">Energy Control Center (ECC)</div>
+      <div id="prodBottom">
+          <div id="prodLeft"><img id="productPic" src="./src/images/Picture1.png"></div>
+          <div id="prodRight">
+            <div id="prodRightTop">
+
+              <div id="bar2">Grid Condition
+                <label class="switch" id="switch2">
+                  <span class="slider"></span>
+                </label>
+                <span id="powerDiv2" class="greenText">STABLE</span>
+              </div>
+
+            </div>
+            <div id="prodRightWords">adsf</div>
+          </div>
+
+          
+
+          <div id="prodRight2" class="ecc-container">
+            <!-- Left Side -->
+            <!-- <div class="ecc-label-column ecc-left"> -->
+              <!-- <div class="ecc-label-wrapper"> -->
+                <!-- <img id="midPic" src="./src/images/Picture1b.png" alt="Center Image" /> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          
+            <!-- Middle Section -->
+            <!-- <div class="ecc-middle"> -->
+              
+            <!-- </div> -->
+          
+            <!-- Right Side -->
+            <div class="ecc-label-column ecc-right">
+              <div class="ecc-label-wrapper">
+                <div class="ecc-label">
+                  <div class="ecc-label-text">Main Breaker</div>
+                  <div class="ecc-label-number">1</div>
+                  <div class="ecc-tooltip">MasterPact MTZ-2</div>
+                </div>
+                <div class="ecc-label">
+                  <div class="ecc-label-text">Multi-function Relay</div>
+                  <div class="ecc-label-number">2</div>
+                  <div class="ecc-tooltip">ANSI25 (sync check), ANSI27 (undervoltage), ANSI32 (directional power), ANSI47 (phase sequence), and more</div>
+                </div>
+                <div class="ecc-label">
+                  <div class="ecc-label-text">Surge Protection</div>
+                  <div class="ecc-label-number">3</div>
+                  <div class="ecc-tooltip">Limits transient voltages by diverting or limiting surge current</div>
+                </div>
+                <div class="ecc-label">
+                  <div class="ecc-label-text">SquareD I-Line Distribution Panel</div>
+                  <div class="ecc-label-number">4</div>
+                  <div class="ecc-tooltip">Distribution section for feeder and DER breakers ≤1200A</div>
+                </div>
+                <div class="ecc-label">
+                  <div class="ecc-label-text">Smart, Communicating Breakers</div>
+                  <div class="ecc-label-number">5</div>
+                  <div class="ecc-tooltip">PowerPact and MasterPacT breakers with motor operators, advanced trip units, and more</div>
+                </div>
+                <div class="ecc-label">
+                  <div class="ecc-label-text">Automation and Control Section</div>
+                  <div class="ecc-label-number">6</div>
+                  <div class="ecc-tooltip">Houses most control components for essential functions such as islanding from the utility, load shedding, and forecasting</div>
+                </div>
+                <div class="ecc-label">
+                  <div class="ecc-label-text">HMI (optional)</div>
+                  <div class="ecc-label-number">7</div>
+                  <div class="ecc-tooltip">A simple touchscreen interface that an operator can use to interact with the ECC</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+      </div>
+
+      
+
+    </div>
+
+    <!-- mixer -->
+
+    
+    
+
+    <!-- mixer -->
+
+    <div id="mixer">
+
+      <input type="checkbox" id="mix"><br>
+      <input type="text" id="c1_Color"><br>
+      <input type="text" id="c2_Color"><br>
+      <input type="text" id="c3_Color"><br>
+      <input type="text" id="c4_Color"><br>
+      <input type="text" id="c5_Color"><br>
+          
+      <input type="range" min="1" max="360" value="50" class="slider" id="c1_H"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c1_S"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c1_L"><br><br>
+      
+      <input type="range" min="1" max="360" value="50" class="slider" id="c2_H"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c2_S"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c2_L"><br><br>
+      
+      <input type="range" min="1" max="360" value="50" class="slider" id="c3_H"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c3_S"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c3_L"><br><br>
+      
+      <input type="range" min="1" max="360" value="50" class="slider" id="c4_H"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c4_S"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c4_L"><br><br>
+      
+      <input type="range" min="1" max="360" value="50" class="slider" id="c5_H"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c5_S"><br>
+      <input type="range" min="1" max="100" value="50" class="slider" id="c5_L"><br><br>
+  
+      <input type="range" min="0" max="100" value="1" class="slider" id="num1"><br>
+      <input type="range" min="0" max="100" value="1" class="slider" id="num2"><br>
+      <input type="range" min="0" max="100" value="1" class="slider" id="num3"><br>
+  
+    </div>
+      
+</body>
+</html>

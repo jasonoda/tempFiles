@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dustin Lynch</title>
+
+    <!-- <link rel="shortcut icon" href="./src/img/tabIcon.png"> -->
+
+    <!--css---------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
+    <!--google fonts---------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <!--meta---------------------------------------------------------------------------------------------------------- -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- <meta
+      name="description"
+      content="Play Bingo with Jason Aldean"
+    />
+    <meta
+      name="keywords"
+      content="Jason Aldean"
+    />
+
+    <meta property="og:url" content="https://macongeorgia.jasonaldean.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Play Bingo with Jason Aldean" />
+    <meta
+      property="og:description"
+      content="Macon, Georgia - New double album available now."
+    />
+    <meta
+      property="og:image"
+      content="http://macongeorgia.jasonaldean.com/fbImage.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Jason_Aldean" />
+    <meta name="twitter:creator" content="@Jason_Aldean" />
+    <meta property="og:url" content="https://macongeorgia.jasonaldean.com/" />
+    <meta property="og:title" content="Play Bingo with Jason Aldean" />
+    <meta
+      property="og:description"
+      content="Macon, Georgia - New double album available now."
+    />
+    <meta
+      property="og:image"
+      content="http://macongeorgia.jasonaldean.com/fbImage.png"
+    /> -->
+    
+</head>
+
+<body>
+
+    <div id="useFont">A</div>
+    <div id="feedback">A</div>
+
+    <div class="type1" id="livesText">LIVES</div>
+    <div id="actionDiv"><div class="type1b" id="actionText">FIND CLUES</div></div>
+    <div id="accDiv"><div class="type1d" id="accText">MAKE ACCUSATION</div></div>
+    <div class="type1" id="cardText">CARDS</div>
+
+    <div class="type2" id="buyText">BUY ALBUM</div>
+    <div class="type2" id="infoText">MORE INFO</div>
+
+    <div id="noCardsDiv"><div class="type3" id="noCards">NO CLUES!<br>MAKE AN ACCUSATION</div></div>
+
+    <div id="playerBack"><img id="playerBackImage" src="./src/img/playerBack.png"></div>
+
+    <a href="http://jasonoda.com" target="_blank"><img id="jodaLink" src="./src/img/jodaLink.png"></a>
+
+    <!-- <img id="cardTest" src="./src/img/cards/doc.png"></div> -->
+
+    <!-- loading stuff -->
+
+    <div id="loadingImage"><img id="loadingImage2" src="./src/img/loading.png"></div>
+    <div id="loadingBack"></div>
+
+    <!-- project -->
+
+    <script src="./src/howler/howler.js"></script>
+
+    <iframe id="spotifyPlayer" src="https://open.spotify.com/embed/artist/1dID9zgn0OV0Y8ud7Mh2tS" width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    <canvas id="mycanvas"></canvas>
+    <script type="text/javascript" src="./src/pixi.js"></script>
+    <script id="main" type="module" src="./src/index.js"></script>
+
+    <!-- -- -->
+
+    <div id="mixer">
+
+      <div id="bgColor"></div>
+      <div id="obColor"></div>
+      <div id="chColor"></div>
+      <div id="etColor"></div>
+    
+        <input type="checkbox" id="mix"><br>
+        <input type="text" id="fogColor"><br>
+        <input type="text" id="tubeColor"><br>
+        <input type="text" id="charColor"><br>
+
+  
+        <input type="range" min="1" max="360" value="50" class="slider" id="fogH"><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="fogS"><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="fogL"><br><br>
+  
+        <input type="range" min="1" max="360" value="50" class="slider" id="tubeH"><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="tubeS"><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="tubeL"><br><br>
+  
+        <input type="range" min="1" max="360" value="50" class="slider" id="chH"><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="chS"><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="chL"><br><br>
+  
+        <input type="range" min="1" max="100" value="50" class="slider" id="test1"><br><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="test2"><br><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="test3"><br><br>
+        <input type="range" min="1" max="100" value="50" class="slider" id="test4"><br><br>
+  
+    </div>
+
+</body>
+</html>

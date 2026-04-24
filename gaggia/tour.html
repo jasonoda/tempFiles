@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>GAGGIA TOUR</title>
+
+    <link rel="shortcut icon" href="./src/img/tabIcon.png">
+
+    <!--css---------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="stylesheet" type="text/css" href="tour.css" />
+
+    <!--google fonts---------------------------------------------------------------------------------------------------------- -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Teko:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--feedback---------------------------------------------------------------------------------------------------------- -->
+
+    <div id="feedback"></div>
+    <div id="feedback2"></div>
+
+    <!--loadingobjects---------------------------------------------------------------------------------------------------------- -->
+
+    <!-- <div id="heightTest"></div> -->
+
+    <div id="loadingCover"></div>
+    <div id="loadingBar"></div>
+    <div id="loadingBarBack"></div>
+
+    <!--logo---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="logoDiv">
+        <img id="logo" src="./src/img/gaggia_logo.png">
+    </div>
+<!--  -->
+    <!--nav---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="navDiv" id="navDiv">
+                    
+        <div class="navButton"><a onclick="changeSection(1)" href="javascript:void(0)" href="#">D90 Alti</a></div>
+        <div class="navButton"><a onclick="changeSection(2)" href="javascript:void(0)" href="#">Espresso</a></div>
+        <div class="navButton"><a onclick="changeSection(3)" href="javascript:void(0)" href="#">Legacy</a></div>
+        <div class="navButton"><a href="purchase.html" >Purchase</a></div>
+
+    </div>
+
+    <!--socialmedia---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="socialMediaIcons" id="socialMediaIcons">
+        <a href="https://www.facebook.com/GaggiaMilanoOfficial/" target="_blank"><img class="smIcon" src="./src/img/fb_icon_clear.png"></a>
+        <a href="https://www.instagram.com/gaggiamilano/" target="_blank"><img class="smIcon" src="./src/img/inst_icon_clear.png"></a>
+    </div>
+
+    <!--steps---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="stepCont" id="stepCont">
+
+
+        <div class="step" id="step1Div">
+            <div class="stepTitle" id="step1">PERFECT ESPRESSO</div>
+        </div>
+
+        <div class="step" id="step2Div">
+            <div class="stepTitle" id="step1">BREWING</div>
+            <div class="stepWords" id="step1">The D90 Alti takes between 25 and 30 seconds to brew an espresso. This flow mainly depends on the kind of grinding. If it is too fast, it means that the grinding is too coarse and water flows too rapidly through the filter-holder. On the contrary, with a too fine grinding, the space among coffee particles shrinks and water flows slowly: there could be an over-extraction or difficulties in extraction. To find the perfect combination, we suggest to experiment different blends and grinding.</div>
+        </div>
+
+        <div class="step" id="step3Div">
+            <div class="stepTitle" id="step1">EXTRACTION</div>
+            <div class="stepWords" id="step1">Once the water starts flowing, two fundamental things will happen. First, the espresso will flow from the machine in a slow but steady stream, resembling a little “mouse tail”. Secondly, the colour of the stream should change from dark to light, as the “crema naturale” begins taking form.
+                The sour notes are exalted within the first few seconds of the extraction process, while the bitter elements complete the body of the drink.</div>
+        </div>
+
+        <div class="step" id="step4Div">
+            <div class="stepTitle" id="step1">CLEANING</div>
+            <div class="stepWords" id="step1">After every use, rinse and dry the filter-holder with a clean cloth to ensure a fresh coffee aroma at every use. After cleaning, leave the filter-holder in the machine, so it maintains the right temperature.</div>
+        </div>
+
+        <div class="stepButtons" id="stepButtons">
+            <a onclick="prevStep(1)" href="javascript:void(0)"><img id="stepButton1" src="./src/img/stepArrow.png"></a>
+            <a onclick="nextStep(1)" href="javascript:void(0)"><img id="stepButton2" src="./src/img/stepArrow.png"></a>
+        </div>
+
+        <div class="closeStepButton" id="closeStepButton">
+            <a onclick="stepClose(1)" href="javascript:void(0)"><img src="./src/img/closeX.png"></a>
+        </div>
+
+        <div class="stepBot" id="stepBot">
+            <a onclick="toStep1(1)" href="javascript:void(0)"><img id="stepDot1" class=stepDot src="./src/img/stepDot1.png"></a>
+            <a onclick="toStep2(1)" href="javascript:void(0)"><img id="stepDot2" class=stepDot src="./src/img/stepDot1.png"></a>
+            <a onclick="toStep3(1)" href="javascript:void(0)"><img id="stepDot3" class=stepDot src="./src/img/stepDot1.png"></a>
+            <a onclick="toStep4(1)" href="javascript:void(0)"><img id="stepDot4" class=stepDot src="./src/img/stepDot1.png"></a>
+        </div>
+
+    </div>
+
+    <!--specs---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="specs" id="specsWindow">
+        
+        <div class="closeSpecs" id="closeSpecs">
+            <a onclick="closeSpecsCall()" href="javascript:void(0)"href="#"><img src="./src/img/closeArrow.png"></a>
+        </div>
+
+        <div class="specsTop">SPECS</div>
+            <div class="specsBody">
+
+                <div class="spec_headline">HIGHLIGHTS</div>
+
+                <div class="specL">USER INTERFACE</div>
+                <div class="specR">DISPLAY TFT IN COLOR, MULTI-BEVERAGE CONTROL PANEL</div>
+                <div class="specL">TYPE OF GRAPHIC USER INTERFACE</div>
+                <div class="specR">DISPLAY TFT IN COLOR</div>
+                <div class="specL">SELECTABLE LANGUAGES</div>
+                <div class="specR">13: IT, IT/CH, EN, DE, FR, ES, PT, NL, PL, RU, SWE, JAP, HU</div>
+                <div class="specL">TOTAL BEVERAGES VARIETY</div>
+                <div class="specR">ESPRESSO, CAFFÈ LUNGO, CAFFÈ, CAPPUCCINO, LATTE MACCHIATO, HOT MILK, MILK FROTH, HOT WATER</div>
+                <div class="specL">MILK/STEAM SOLUTION</div>
+                <div class="specR">INTEGRATED MILK CARAFE, AND STAINLESS STEEL HOT WATER/STEAM DISPENSER</div>
+                <div class="specL">CERAMIC GRINDERS</div>
+                <div class="specR">YES</div>
+                <div class="specL">ADJUSTABLE GRINDER SETTING</div>
+                <div class="specR">8 SELECTIONS</div>
+                <div class="specL">OPTIAROMA</div>
+                <div class="specR">3 SELECTIONS</div>
+                <div class="specL">ADJUSTABLE COFFEE SPOUTS</div>
+                <div class="specR">YES</div>
+                <div class="specL">CUP WARMER</div>
+                <div class="specR">ACTIVE, S/S</div>
+
+                <div class="spec_headline">BEVERAGES IN CUP QUALITY</div>
+
+                <div class="specL">PUMP PRESSURE</div>
+                <div class="specR">15 BAR</div>
+                <div class="specL">PRE-BREWING</div>
+                <div class="specR">4 LEVELS</div>
+                <div class="specL">GROUND COFFEE OPTION</div>
+                <div class="specR">YES</div>
+                <div class="specL">ADJUSTABLE COFFEE LENGTH</div>
+                <div class="specR">YES</div>
+                <div class="specL">ADJUSTABLE COFFEE TEMPERATURE</div>
+                <div class="specR">3 LEVELS</div>
+                <div class="specL">ADJUSTABLE MILK LENGTH</div>
+                <div class="specR">YES</div>
+                <div class="specL">ADJUSTABLE MILK FOAM</div>
+                <div class="specR">4 LEVELS</div>
+                <div class="specL">ESPRESSO PLUS SYSTEM</div>
+                <div class="specR">YES</div>
+                <div class="specL">GAGGIA ADAPTING SYSTEM</div>
+                <div class="specR">YES</div>
+
+                <div class="spec_headline">EASE OF USE</div>
+
+                <div class="specL">CAPACITY WATER TANK</div>
+                <div class="specR">1, 6 L</div>
+                <div class="specL">CAPACITY MILK CARAFE</div>
+                <div class="specR">0, 6 L</div>
+                <div class="specL">CAPACITY BEANS CONTAINER</div>
+                <div class="specR">350 G</div>
+                <div class="specL">CAPACITY COFFEE PUCKS CONTAINER</div>
+                <div class="specR">15-16 COFFEE PUCKS</div>
+                <div class="specL">SIMULTANEOUSLY BREWING OF 2 COFFEE CUPS</div>
+                <div class="specR">YES</div>
+                <div class="specL">REMOVABLE COMPONENTS</div>
+                <div class="specR">MILK CARAFE: FRONTAL; WATER TANK: UP; COFFEE PUCKS CONTAINER: FRONTAL; DRIP TRAY PLATE: FRONTAL; DRIP TRAY CONTAINER: FRONTAL; BREW GROUP: FRONTAL</div>
+                
+                <div class="spec_headline">MAINTENANCE</div>
+
+                <div class="specL">WATER FILTER COMPATIBILITY</div>
+                <div class="specR">INTENZA+</div>
+                <div class="specL">RINSING CYCLE</div>
+                <div class="specR">AUTOMATIC</div>
+                <div class="specL">MILK CIRCUIT CLEANING CYCLE</div>
+                <div class="specR">AUTOMATIC (QUICK CLEAN)</div>
+                <div class="specL">DESCALING CYCLE</div>
+                <div class="specR">AUTOMATIC</div>
+                
+                <div class="spec_headline">MATERIALS, FINISHING AND DIMENSIONS</div>
+
+                <div class="specL">PRODUCT DIMENSIONS (L X H X D)</div>
+                <div class="specR">28,2 X 38,5 X 42,8 CM</div>
+                <div class="specL">PRODUCT WEIGHT</div>
+                <div class="specR">17, 8 KG</div>
+                <div class="specL">BODYWORK</div>
+                <div class="specR">SOFT-TOUCH BLACK PAINTED METAL</div>
+                <div class="specL">FRONT</div>
+                <div class="specR">S/S FINGERPRINT PROOF</div>
+                <div class="specL">DRIP TRAY</div>
+                <div class="specR">METAL</div>
+                
+                <div class="spec_headline">ENERGY CONSUMPTION</div>
+
+                <div class="specL">BOILER</div>
+                <div class="specR">2 INDEPENDENT S/S BOILERS</div>
+                <div class="specL">RAPID STEAM</div>
+                <div class="specR">YES</div>
+                <div class="specL">POWER SUPPLY</div>
+                <div class="specR">230V 50HZ 1500W; 120V 60HZ 1500W</div>
+                <div class="specL">ENERGY CONSUMPTION STAND-BY</div>
+                <div class="specR">1W</div>
+
+                <div class="spec_headline"></div>
+                <div class="spec_headline"></div>
+
+
+            </div>
+        </div>
+    </div>
+    
+    <!--introtype---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="introText">
+        <div id="header1" class="bigType"><p>D90 Alti.</p></div>
+        <div id="sub1" class="smallType">
+            <p>A classic in the making. With a time-tested reputation for quality, meticulous attention to detail, and an unparalleled commitment to tradition, Gaggia is the clear choice for homes and businesses alike.</p>
+        </div>
+
+        <div id="tourButtonDiv">
+            <a onclick="startTour()" href="javascript:void(0)" id="tourButton" href="#">take the tour</a>
+        </div>
+    </div>
+
+    <!--section2---------------------------------------------------------------------------------------------------------- -->
+
+    <div class="section2Text">
+        <div id="header2" class="bigType"><p>The Art of Espresso</p></div>
+        <div id="sub2" class="smallType"><p></p></div>
+        <!-- <div id="sub2" class="smallType"><p>A celebration of traditional recepes.</p></div> -->
+    </div>
+    
+    <!--section3---------------------------------------------------------------------------------------------------------- -->
+
+    <div id="section3Text" class="section3Text">
+        <div id="header3" class="bigType"><p>1930</p></div>
+        <div id="sub3" class="smallType"><p></p></div>
+    </div>
+
+    <div id="histTextCont">
+        <div id="histText">Celebrating the history of Gaggia on our 80th Anniversary.
+        </div>
+    </div>
+
+    <!--videoplayer---------------------------------------------------------------------------------------------------------- -->
+
+    <div id="youtubeDiv" class="mfp-hide embed-responsive embed-responsive-21by9">
+        <iframe id=youtubeIframe class="embed-responsive-item" height="760" src="https://www.youtube.com/embed/d29bPgaxzE0?autoplay=0" frameborder="0" allow="autoplay"; encrypted-media allowfullscreen>
+        </iframe>
+      </div>
+      <!--  -->
+
+    <div id="videoDiv"> 
+        <video id="videoPlayer">
+            <source src="./src/video/milk.mp4" type="video/mp4" >
+        </video>
+        <!-- <div id="playVideoDiv">  -->
+            <!-- <a id="playVideoButton" onclick="playVideoCall()" href="javascript:void(0)"href="#"><img src="./src/img/closeArrow.png"></a> -->
+        <!-- </div> -->
+    </div>
+    <div id="videoDivBlack"> </div>
+
+    <!--canvasimages---------------------------------------------------------------------------------------------------------- -->
+
+    <img id="testPattern" class="canvasImage" src="./src/img/testPattern.png" />
+    <img id="whiteColor" class="canvasImage" src="./src/img/whiteColor.png" />
+    <img id="blackColor" class="canvasImage" src="./src/img/blackColor.png" />
+    <img id="clearColor" class="canvasImage" src="./src/img/clearColor.png" />
+    <img id="roundButton" class="canvasImage" src="./src/img/roundButton.png" />
+    <img id="roundButton2" class="canvasImage" src="./src/img/roundButton2.png" />
+    <img id="roundButtonRed" class="canvasImage" src="./src/img/roundButtonRed.png" />
+    <img id="exploreDot" class="canvasImage" src="./src/img/exploreDot.png" />
+    <img id="drag" class="canvasImage" src="./src/img/drag.png" />
+    <img id="whiteGlow" class="canvasImage" src="./src/img/whiteGlow.png" />
+    <img id="blackGlow" class="canvasImage" src="./src/img/blackGlow.png" />
+    <img id="legacyBackground" class="canvasImage" src="./src/img/legacyBackground.png" />
+    <img id="timeLine" class="canvasImage" src="./src/img/timeLine.png" />
+    <img id="timeLineDot" class="canvasImage" src="./src/img/timeLineDot.png" />
+    <img id="timeLineDot2" class="canvasImage" src="./src/img/timeLineDot2.png" />
+    <img id="arrowBut" class="canvasImage" src="./src/img/arrowBut.png" />
+    <img id="timeLinePoint" class="canvasImage" src="./src/img/timeLinePoint.png" />
+
+    <img id="stepDot1" class="canvasImage" src="./src/img/stepDot1.png" />
+    <img id="stepDot2" class="canvasImage" src="./src/img/stepDot2.png" />
+
+    <img id="80th Anniversary" class="canvasImage" src="./src/img/history2/80th-Anniversary.png" />
+    <img id="1930" class="canvasImage" src="./src/img/history2/1930.png" />
+    <img id="1936" class="canvasImage" src="./src/img/history2/1936.png" />
+    <img id="1938" class="canvasImage" src="./src/img/history2/1938.png" />
+    <img id="1939" class="canvasImage" src="./src/img/history2/1939.png" />
+    <img id="1947" class="canvasImage" src="./src/img/history2/1947.png" />
+    <img id="1948" class="canvasImage" src="./src/img/history2/1948.png" />
+    <img id="1949" class="canvasImage" src="./src/img/history2/1949.png" />
+    <img id="1950" class="canvasImage" src="./src/img/history2/1950.png" />
+    <img id="1952" class="canvasImage" src="./src/img/history2/1952.png" />
+    <img id="1955" class="canvasImage" src="./src/img/history2/1955.png" />
+    <img id="1956" class="canvasImage" src="./src/img/history2/1956.png" />
+    <img id="1957" class="canvasImage" src="./src/img/history2/1957.png" />
+    <img id="1961" class="canvasImage" src="./src/img/history2/1961.png" />
+    <img id="1962" class="canvasImage" src="./src/img/history2/1962.png" />
+    <img id="1968" class="canvasImage" src="./src/img/history2/1968.png" />
+    <img id="1977" class="canvasImage" src="./src/img/history2/1977.png" />
+    <img id="1980" class="canvasImage" src="./src/img/history2/1980.png" />
+    <img id="1991" class="canvasImage" src="./src/img/history2/1991.png" />
+    <img id="1993" class="canvasImage" src="./src/img/history2/1993.png" />
+    <img id="1999" class="canvasImage" src="./src/img/history2/1999.png" />
+    <img id="2007" class="canvasImage" src="./src/img/history2/2007.png" />
+    <img id="2009" class="canvasImage" src="./src/img/history2/2009.png" />
+    <img id="2013" class="canvasImage" src="./src/img/history2/2013.png" />
+    <img id="2018" class="canvasImage" src="./src/img/history2/2018.png" />
+    
+
+    <!--canvasUI---------------------------------------------------------------------------------------------------------- -->
+    
+    <canvas id="canvasUI" width=window.innerWidth height=window.innerHeight></canvas>
+
+    <!--supportscripts---------------------------------------------------------------------------------------------------------- -->
+
+    <script src="./src/three/three.js"></script>
+    <script src="./src/three/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+    <!--myutils---------------------------------------------------------------------------------------------------------- -->
+
+    <script type="text/javascript" src="./src/u.js"></script>
+
+    <!--mycanvasscripts---------------------------------------------------------------------------------------------------------- -->
+
+    <script type="text/javascript" src="./src/canvas/primitives/button.js"></script>
+    <script type="text/javascript" src="./src/canvas/primitives/container.js"></script>
+    <script type="text/javascript" src="./src/canvas/primitives/sprite.js"></script>
+    <script type="text/javascript" src="./src/canvas/primitives/textBox.js"></script>
+    <script type="text/javascript" src="./src/canvas/particles.js"></script>
+    <script type="text/javascript" src="./src/canvas/canvasUtils.js"></script>
+    <script type="text/javascript" src="./src/canvas/canvasInput.js"></script>
+    <script type="text/javascript" src="./src/canvas/canvasRenderer.js"></script>
+    <script type="text/javascript" src="./src/canvas/canvasAudio.js"></script>
+    <script type="text/javascript" src="./src/canvas/canvas.js"></script>
+    
+    <!--mymainscript---------------------------------------------------------------------------------------------------------- -->
+
+    <script id="main" type="text/javascript" src="./src/tour.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,251 @@
+/* div { border: 3px solid green; } */
+
+body{
+    margin:0px;
+}
+
+.topRed{
+    background-color: red;
+    widows: 100%;
+    height: 70px;
+    /* display: flex; */
+}
+
+.topRed2{
+    /* border: 3px solid green; */
+    margin-left: 220px;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gaggiaLogo{
+    /* margin: 0 auto; */
+}
+
+.topPiecesR{
+    /* margin: 0 auto; */
+    margin-top: 17px;
+    margin-right: 10px;
+}
+
+.topPiecesL{
+    /* margin: 0 auto; */
+    /* margin-top: 17px; */
+    margin-left: 10px;
+}
+
+/*  */
+.container{
+    display: flex;
+    width: 100%; 
+    max-width: 1024px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.container2{
+    display: flex;
+    width: 100%; 
+    max-width: 1224px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.section{
+    /* border: 3px solid green; */
+    /* background-color: cyan; */
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.bottomSection{
+    /* border: 3px solid red; */
+    max-width: 100%;
+    width: 100%;
+    /* height:300px; */
+}
+
+.productPhotoDiv{
+    /* border: 3px solid red; */
+    width:50%;
+    
+}
+
+.bottomLinePhoto{
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.spacerKill{
+    /* border: 3px solid red; */
+    height:30px;
+}
+
+.productPhoto{
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.productInfo{
+    /* border: 3px solid purple; */
+    width: 50%;
+    /* padding: 10px; */
+}
+
+.productInfo2{
+    /* border: 3px solid red; */
+    /* background-color: cyan; */
+    max-width: 500px;
+    display: block;
+    /* max-width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+    padding: 10px;
+}
+
+@media (max-width:900px){
+    .section{
+        flex-direction: column;
+        /* background-color: pink; */
+        /* width: 512px; */
+        max-width: 500px;
+    }
+    .productPhotoDiv{
+        width:100%;
+    }
+    .productInfo{
+        width:100%;
+    }
+    .spacerKill{
+        height:0px;
+    }
+    .p_writing{
+        margin-left:10px;
+        margin-right:10px;
+        /* background-color: pink; */
+    }
+    .gaggiaLogo{
+        margin: 0 auto;
+    }
+    .topRed2{
+        padding-left: 0px;
+    }
+}
+
+@media (max-width:1040px){
+    .p_writing{
+        margin-left:10px;
+        margin-right:10px;
+        /* background-color: pink; */
+    }
+}
+
+/* ------------product info---------------- */
+
+p {
+    margin: 0;
+}
+
+.p_model{
+    /* border: 3px solid green; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    font-size: 28px;
+    padding: 0px;
+    width: 100%;
+}
+
+.p_codes{
+    /* background-color: grey; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    font-size: 10px;
+    line-height: 2;
+    color: grey;
+}
+
+.p_bottomEnd{
+    /* background-color: grey; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:900;
+    font-size: 10px;
+    line-height: 2;
+    color: grey;
+    text-align: center;
+    display: block;
+}
+
+.p_price{
+    /* border: 3px solid purple; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    font-size: 32px;
+}
+
+.p_writing{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    color: grey;
+    line-height: 2;
+    text-align: justify;
+    text-justify: inter-word;
+    letter-spacing: 1px;
+}
+
+.p_addToCartCont{
+    /* border: 3px solid purple; */
+    height:50px;
+    padding-top:16px;
+}
+
+#p_addToCart{
+    
+    /* border: 3px solid purple; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight:900;
+    font-size: 14   px;
+
+    margin-top: 320px;
+    z-index:22;
+    background: red;
+    
+    color:#e2eaf3;
+    padding: 16px;
+    
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.p_greyLine{
+    
+    background-color: #c0c0c0;
+    width: 100%;
+    height: 1px;
+}
+
+.smIconsDiv{
+    margin: 0 auto;
+}
+
+.smIcons{
+    /* margin: 0 auto; */
+}

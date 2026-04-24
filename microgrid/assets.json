@@ -1,0 +1,37 @@
+{
+  "main": {
+    "js": "/bundle.js"
+  },
+  "": {
+    "glb": [
+      "/src/models/house.glb",
+      "/src/models/soccerBall.glb",
+      "/src/models/houseParts.glb"
+    ],
+    "png": [
+      "/src/images/Picture1b.png",
+      "/src/images/Picture1.png",
+      "/src/images/Picture2.png",
+      "/src/images/Picture3.png",
+      "/src/images/ref/pos-x.png",
+      "/src/images/ref/pos-z.png",
+      "/src/images/ref/neg-z.png",
+      "/src/images/ref/neg-x.png",
+      "/src/images/ref/pos-y.png",
+      "/src/images/logo.png",
+      "/src/images/logo2.png",
+      "/src/images/white.png",
+      "/src/images/ref/neg-y.png",
+      "/src/images/lines.png",
+      "/src/images/grass.png",
+      "/src/images/black.png"
+    ],
+    "jpg": "/src/images/testImage.jpg",
+    "mp3": "/src/sounds/click.mp3",
+    "svg": [
+      "/src/images/closeX.svg",
+      "/src/images/boltRed.svg",
+      "/src/images/boltGreen.svg"
+    ]
+  }
+}
