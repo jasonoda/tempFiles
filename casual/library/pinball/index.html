@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Burn Ghost Pinball</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	
+	<!-- Made with Construct, the game and app creator :: https://www.construct.net -->
+	<meta name="generator" content="Scirra Construct">
+
+
+
+	<link rel="manifest" href="appmanifest.json">
+	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+	<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+	<link rel="icon" type="image/png" href="icons/icon-512.png">
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="shared.css">
+	<!-- Removed Google Fonts to avoid CORS issues -->
+	
+	<!-- Alternative font loading to avoid CORS issues -->
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	
+	<!-- Using local system fonts to avoid CORS issues completely -->
+	<style>
+		/* Font fallback system - ensures text is always visible */
+		@font-face {
+			font-family: 'SystemFonts';
+			src: local('Segoe UI'), local('Arial'), local('Helvetica'), local('sans-serif');
+			font-display: swap;
+		}
+		
+		/* Apply system fonts with good fallbacks */
+		body, .ui {
+			font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
+		}
+		
+		#gameScore {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			background: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 15px 20px;
+			border-radius: 10px;
+			font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
+			font-size: 24px;
+			font-weight: bold;
+			z-index: 9999;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			border: 2px solid #ff6b35;
+		}
+	</style>
+</head> 
+ 
+<body>
+
+    <div class="ui" id="topDiv"></div>
+    <!-- <div class="ui" id="bonusDiv"></div> -->
+    <div class="ui" id="upperLeftDiv"></div>
+    <div class="ui" id="upperRightDiv"></div>
+
+    <!-- New Score, Multiplier, and Time Display -->
+    <div id="scoreTimeContainer">
+        <div id="scoreDisplay">0</div>
+        <div id="scoreTimeDivider">|</div>
+        <div id="multiplierDisplay">x1</div>
+        <!-- <div id="multiplierTimeDivider">|</div> -->
+        <!-- <div id="timeDisplay">0:00</div> -->
+    </div>
+
+	<div id="startMenu">
+		<div id="startMenuContainer">
+			<img id="splashImage" src="images/splashImage.png" alt="Splash">
+			<div id="playButton">PLAY</div>
+			<!-- <div id="instructionsButton">INSTRUCTIONS</div> -->
+		</div>
+	</div>
+
+	<div id="splashBackground">
+		<img src="images/backgroundSplash.png" alt="Splash" />
+	</div>
+	
+
+    <div id="loadingImage"></div>
+    <div id="loadingBack"></div>
+
+<script>
+if (location.protocol.substr(0, 4) === "file")
+{
+	alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+}
+</script>
+	
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+		</div>
+	</noscript>
+	<script src="scripts/modernjscheck.js"></script>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/offlineclient.js" type="module"></script>
+	
+	<!-- FORCE DOM MODE: This makes console.log work by preventing Construct 3 from using worker mode -->
+	<!-- To change back to worker mode (default), comment out or delete the next line -->
+	<script>window.c3_forceDOM = true;</script>
+	
+	<!-- GSAP for animations -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	
+	<!-- Howler.js for sound system -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+	
+	<script src="scripts/main.js" type="module"></script>
+	<script src="scripts/register-sw.js" type="module"></script>
+
+</body> 
+</html>

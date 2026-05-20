@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbg_basketball=self.webpackChunkbg_basketball||[]).push([[862],{862:e=>{e.exports=JSON.parse("[0,25000,40000,65000,100000]")}}]);

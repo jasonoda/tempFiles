@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Burn Ghost</title>
+
+    <!-- <link rel="shortcut icon" href="./src/img/tabIcon.png"> -->
+
+    <!--css---------------------------------------------------------------------------------------------------------- -->
+
+    <!-- webpack will inject CSS here -->
+
+    <script src="7e476e89f0ab18dffc47.js"></script>
+
+
+    <!--google fonts---------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <!--meta---------------------------------------------------------------------------------------------------------- -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script>
+      window.addEventListener('load', (event) => {
+        var loadJS = function(url, implementationCode){
+
+          var scriptTag = document.createElement('script');
+          scriptTag.src = url;
+          scriptTag.type = 'module';
+          scriptTag.id = 'main';
+          scriptTag.onload = implementationCode;
+          //scriptTag.onreadystatechange = implementationCode;
+
+          console.log("LOAD JS");
+
+          document.head.appendChild(scriptTag);
+        };
+        loadJS('index-bundle-1d8241ab9ad90332177f.js', () => {
+          // window.parent.postMessage(JSON.stringify({
+          //   type: 'GameLoaded'
+          // }), "*");
+        });
+      });
+
+    </script>
+
+<script defer src="styles-bundle-1d8241ab9ad90332177f.js"></script><link href="styles.185d18a0bfb6cf8fc678.css" rel="stylesheet"></head>
+
+<body oncontextmenu="return false">
+
+  <div id="pushDown"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  
+    <div id="useFont">A</div>
+    <div id="useFont2">A</div>
+    <div id="useFont3">A</div>
+    <div id="feedback">A</div>
+
+    <!-- loading stuff -->
+
+    <div id="loadingImage"></div>
+    <div id="loadingBack"></div>
+
+    <div class="ui" id="topDiv"></div>
+    <div class="ui" id="bonusDiv"></div>
+    <div class="ui" id="upperLeftDiv"></div>
+    <div class="ui" id="upperRightDiv">LIFE: 100</div>
+    <div class="ui" id="lowerCenterDiv">LEVEL 1</div>
+    <div class="ui" id="bonusDisplay">BONUS: x1.0</div>
+
+    <div id="startMenu">
+      <div id="startMenuContainer">
+          <!-- <img id="splashImage" src="./src/img/cover.png" alt="Splash"> -->
+          <div id="playButton">PLAY</div>
+          <div id="instructionsButton">INSTRUCTIONS</div>
+      </div>
+    </div>
+
+    <div id="instructionsOverlay">
+        <div id="instructionsContainer">
+            <div id="instructionsTitle">INSTRUCTIONS</div>
+            
+            <div id="instructionsText">
+                <div class="instructionLine">Press left & right arrows (or A & D).</div>
+                <div class="instructionLine">Switch directions repeatedly to hover in middle.</div>
+                <div style="height: 6px;"></div>
+                <div class="instructionDivider"></div>
+                <div style="height: 6px;"></div>
+                <div class="instructionLine">Hologon will be blue or red.</div>
+                <div class="instructionLine">Only touch walls of that corresponding color.</div>
+                <div style="height: 6px;"></div>
+                <div class="instructionDivider"></div>
+                <div style="height: 6px;"></div>
+                <div class="instructionLine">Extra points</div>
+                <div style="height: 6px;"></div>
+                <img src="src/img/coinRed.png" style="width: 30px; height: 30px;">
+                <div style="height: 6px;"></div>
+                <div class="instructionDivider"></div>
+                <div style="height: 6px;"></div>
+                <div class="instructionLine">Avoid</div>
+                <div style="height: 6px;"></div>
+                <img src="src/img/penaltyRed.png" style="width: 30px; height: 30px;">
+                <div style="height: 10px;"></div>
+            </div>
+            
+            <div id="closeInstructionsButton">CLOSE</div>
+        </div>
+    </div>
+    
+    <!-- <img id="muteButton" src="./src/img/audio_on.svg" /> -->
+
+
+    <!-- <div id="percTextDiv"></div> -->
+
+    <div id="levTextDiv">LEV 1</div>
+
+
+    <div id="bonusTextDiv"></div>
+
+    <div id="bonusBigTextDiv"></div>
+
+    <div id="switchingTextDiv"></div>
+
+    <img id="titleLogo" src="src/img/titleLogo.svg"></div>
+
+    <div class="bottomleftdiv" id="bottomleftdiv">
+      <div class="scorediv">
+        <!-- <img id="muteButton" src="./src/img/audio_on.svg"> -->
+      </div>
+    </div>
+
+    <!-- <div id="legacyStartMenu">
+      <div id="insText">INSTRUCTIONS</div>
+      <div id="startText">START</div>
+    </div> -->
+
+    <!-- project -->
+
+    <canvas id="mycanvas"></canvas>
+
+    <!-- end -->
+
+    <div id="resultCont">
+      <!-- Final score content will be generated by endScore.js -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

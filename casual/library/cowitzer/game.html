@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #5aabc6;
+			}
+			#loadingBack {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10000;
+				background-color: rgb(184, 234, 255);
+				pointer-events: none;
+			}
+			body:not(.game-ready) #scoreDiv,
+			body:not(.game-ready) #controlContainer,
+			body:not(.game-ready) #launchBut,
+			body:not(.game-ready) #playAgainBut,
+			body:not(.game-ready) #winText,
+			body:not(.game-ready) #mycanvas,
+			#pushDown,
+			#useFont,
+			#feedback,
+			#mixer {
+				visibility: hidden;
+			}
+		</style>
+		<title>BURN GHOST</title>
+
+		<meta name="google" content="notranslate" />
+
+		<link rel="stylesheet" type="text/css" href="ddbc4eda62cabb88e7ee.css" />
+
+		<script src="31c5cfc0aeebabc12c9b.js"></script>
+
+		<!--css---------------------------------------------------------------------------------------------------------- -->
+
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-K8LPL4T9LY");
+		</script>
+
+		<script>
+			window.addEventListener("load", (event) => {
+				var loadJS = function (url, implementationCode) {
+					var scriptTag = document.createElement("script");
+					scriptTag.src = url;
+					scriptTag.type = "module";
+					scriptTag.id = "main";
+					scriptTag.onload = implementationCode;
+					scriptTag.onreadystatechange = implementationCode;
+
+					document.head.appendChild(scriptTag);
+				};
+				loadJS("index-bundle-0b9def74fb0fe4328c3c.js", () => {
+					console.log("LOAD GAME AT GAME.HTML");
+					window.parent.postMessage(
+						JSON.stringify({
+							type: "GameLoaded",
+						}),
+						"*"
+					);
+				});
+			});
+		</script>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</head>
+
+	<body>
+		<div id="pushDown">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+		<div id="pushDown">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+		<div id="pushDown">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+		<div id="pushDown">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+
+		<!-- font -->
+
+		<div id="useFont">A</div>
+		<div id="feedback">A</div>
+
+		<!-- loading -->
+
+		<div id="winText">WIN!</div>
+
+		<div id="loadingBack"></div>
+
+		<!-- bonus -->
+
+		<!-- <div id="startText">start</div> -->
+		<!-- <div id="instructionsText">instructions</div> -->
+
+		<!-- controls -->
+		<div id="scoreDiv">
+			<div id="score">0</div>
+			<div id="scoreTitle">CURRENT PAYOUT</div>
+			<div id="playAgainBut"><span>PLAY AGAIN</span></div>
+		</div>
+		<div id="controlContainer">
+			<div class="top">
+				<div class="red-box">
+					<img src="src/img/power.svg" class="rotate-image" />
+					<div id="powerMeterBG">
+						<div id="powerMeter"></div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<!-- <div class="text">ANGLE</div> -->
+				<div class="slider-container" id="hideAngle">
+					<img src="src/img/roate.svg" class="rotate-image" />
+					<input
+						id="cannonAngle"
+						type="range"
+						min="0"
+						max="100"
+						value="50"
+						class="slider"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<div id="launchBut"><span>LAUNCH</span></div>
+
+		<!-- main -->
+
+		<script src="8f0516c3583884feb21d.js"></script>
+
+		<canvas id="mycanvas"></canvas>
+		<script type="text/javascript" src="64cb3d082f54492cab73.js"></script>
+		<script id="main" type="module" src="4ec81394d8ddc7520f2a.js"></script>
+
+		<!-- <div id="betDiv">
+      <div class="inner-divs">
+        <div id="winnings">Inner Div 1</div>
+        <div id="winChance">Inner Div 2</div>
+      </div>
+    </div>
+    <input type="range" id="betSlider" min="2" max="98" value="50"> -->
+
+		<!-- mixer -->
+
+		<div id="mixer">
+			<input type="checkbox" id="mix" /><input
+				type="text"
+				id="allColor"
+			/><br />
+			<input type="text" id="c1_Color" /><br />
+			<input type="text" id="c2_Color" /><br />
+			<input type="text" id="c3_Color" /><br />
+			<input type="text" id="c4_Color" /><br />
+			<input type="text" id="c5_Color" /><br />
+			<input type="text" id="c6_Color" /><br />
+
+			<input type="checkbox" id="mix1" />
+			<input
+				type="range"
+				min="1"
+				max="360"
+				value="50"
+				class="slider"
+				id="c1_H"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c1_S"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c1_L"
+			/><br /><br />
+
+			<input type="checkbox" id="mix2" />
+			<input
+				type="range"
+				min="1"
+				max="360"
+				value="50"
+				class="slider"
+				id="c2_H"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c2_S"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c2_L"
+			/><br /><br />
+
+			<input type="checkbox" id="mix3" />
+			<input
+				type="range"
+				min="1"
+				max="360"
+				value="50"
+				class="slider"
+				id="c3_H"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c3_S"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c3_L"
+			/><br /><br />
+
+			<input type="checkbox" id="mix4" />
+			<input
+				type="range"
+				min="1"
+				max="360"
+				value="50"
+				class="slider"
+				id="c4_H"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c4_S"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c4_L"
+			/><br /><br />
+
+			<input type="checkbox" id="mix5" />
+			<input
+				type="range"
+				min="1"
+				max="360"
+				value="50"
+				class="slider"
+				id="c5_H"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c5_S"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c5_L"
+			/><br /><br />
+
+			<input type="checkbox" id="mix6" />
+			<input
+				type="range"
+				min="1"
+				max="360"
+				value="50"
+				class="slider"
+				id="c6_H"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c6_S"
+			/><br />
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="slider"
+				id="c6_L"
+			/><br /><br />
+
+			<input type="text" id="num1Text" /><br />
+			<input type="text" id="num2Text" /><br />
+			<input type="text" id="num3Text" /><br />
+			<input type="text" id="num4Text" /><br />
+			<input type="text" id="num5Text" /><br />
+
+			<input
+				type="range"
+				min="0"
+				max="100"
+				value="1"
+				class="slider"
+				id="num1"
+			/><br />
+			<input
+				type="range"
+				min="0"
+				max="100"
+				value="1"
+				class="slider"
+				id="num2"
+			/><br />
+			<input
+				type="range"
+				min="0"
+				max="100"
+				value="1"
+				class="slider"
+				id="num3"
+			/><br />
+			<input
+				type="range"
+				min="0"
+				max="100"
+				value="1"
+				class="slider"
+				id="num4"
+			/><br />
+			<input
+				type="range"
+				min="0"
+				max="100"
+				value="1"
+				class="slider"
+				id="num5"
+			/><br />
+		</div>
+	</body>
+</html>

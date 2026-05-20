@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkghostrunner=self.webpackChunkghostrunner||[]).push([[862],{6862:e=>{e.exports=JSON.parse("[0,10000,20000,30000,45000]")}}]);

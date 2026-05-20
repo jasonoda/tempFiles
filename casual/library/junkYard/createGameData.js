@@ -1,0 +1,1 @@
+const createGameDataCode="function createGameData() {\n  class MakeGameData {\n    \n  }\n  \n  const mgd = new MakeGameData();\n  return mgd.makeRanLevelData();\n}";

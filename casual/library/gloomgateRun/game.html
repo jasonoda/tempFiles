@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>BURN GHOST</title>
+
+    <meta name="google" content="notranslate" />
+
+    <link rel="stylesheet" type="text/css" href="ddbc4eda62cabb88e7ee.css" />
+    <link rel="stylesheet" type="text/css" href="c5291e66106966aefa3f.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-K8LPL4T9LY");
+      console.log("GAME v2");
+    </script>
+
+    <script>
+      window.addEventListener("load", (event) => {
+        var loadJS = function (url, implementationCode) {
+          //url is URL of external file, implementationCode is the code
+          //to be called from the file, location is the location to
+          //insert the <script> element
+
+          var scriptTag = document.createElement("script");
+          scriptTag.src = url;
+          scriptTag.type = "module";
+          scriptTag.id = "main";
+          scriptTag.onload = implementationCode;
+          scriptTag.onreadystatechange = implementationCode;
+
+          document.head.appendChild(scriptTag);
+        };
+        loadJS("index-bundle-f9435cb1fa0c6b4b9ed3.js", () => {
+          window.parent.postMessage(
+            JSON.stringify({
+              type: "GameLoaded",
+            }),
+            "*"
+          );
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="pushDown">
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+    
+    <div class="ui" id="topDiv"></div>
+    <div class="ui" id="bonusDiv"></div>
+    <div class="ui" id="upperLeftDiv"></div>
+    <div class="ui" id="upperRightDiv"></div>
+
+    <!-- Score Display -->
+    <div id="scoreTimeContainer">
+        <div id="scoreDisplay">0</div>
+    </div>
+
+    <div class="ui" id="levelText"></div>
+
+    <div id="startMenu">
+      <div id="startMenuContainer">
+          <img id="splashImage" src="src/img/splashImage.png" alt="Splash">
+          <div id="playButton">PLAY</div>
+          <div id="instructionsButton">INSTRUCTIONS</div>
+      </div>
+    </div>
+
+    <div id="startBlackBack"></div>
+    
+    <div id="instructionsOverlay">
+      <div id="instructionsContainer">
+          <div id="instructionsTitle">INSTRUCTIONS</div>
+          
+          <div id="instructionsText">
+              <div class="instructionLine">tap left or right to rotate pathway</div>
+              <div style="height: 6px;"></div>
+              <div class="instructionDivider"></div>
+              <div style="height: 6px;"></div>
+              <div class="instructionLine">stay on the path and collect<br>items to score points</div>
+              <div style="height: 10px;"></div>
+          </div>
+          
+          <div id="closeInstructionsButton">CLOSE</div>
+      </div>
+  </div>
+
+    <div id="splashBackground">
+      <img src="src/img/splash.png" alt="Splash" />
+    </div>
+
+    <div class="toprightdiv" id="toprightdiv">
+      <img
+        src="src/img/score.svg"
+        loading="lazy"
+        alt=""
+        class="scoreicon"
+        id="scoreicon"
+      />
+    </div>
+
+    <div class="topleftdiv" id="topleftdiv">
+      <img src="src/img/bgweb.svg" loading="lazy" alt="" class="bglogo" />
+    </div>
+
+    <div class="bottomleftdiv" id="bottomleftdiv">
+      <div class="scorediv">
+        
+      </div>
+    </div>
+
+    <div id="useFont">A</div>
+    <div id="useFont2">A</div>
+    <div id="useFont3">A</div>
+    <div id="feedback">A</div>
+    <div id="feedback2">A</div>
+
+    <div id="loadingImage"></div>
+    <div id="loadingBack"></div>
+
+    <div class="ui" id="bonusDisplay">BONUS: x1.0</div>
+
+    <div id="coverDiv">
+      <img id="coverImage" src="src/img/coverImage.png" />
+    </div>
+    <div id="coverBack"></div>
+
+    <div id="resultCont">
+      <div id="finalScoreTitle">FINAL SCORE</div>
+      <div id="finalScore">0</div>
+
+      <div class="scoreBarCont" id="sc1">
+        <div class="scoreBar" id="scBar1"></div>
+        <div class="scoreBarBack" id="scBarBack1"></div>
+        <div class="scoreDisp1" id="scDisp1A">0</div>
+        <div class="scoreDisp2" id="scDisp1B">Large x 250</div>
+      </div>
+
+      <div class="scoreBarCont" id="sc2">
+        <div class="scoreBar" id="scBar2"></div>
+        <div class="scoreBarBack" id="scBarBack2"></div>
+        <div class="scoreDisp1" id="scDisp2A">0</div>
+        <div class="scoreDisp2" id="scDisp2B">Medium x 100</div>
+      </div>
+
+      <div class="scoreBarCont" id="sc3">
+        <div class="scoreBar" id="scBar3"></div>
+        <div class="scoreBarBack" id="scBarBack3"></div>
+        <div class="scoreDisp1" id="scDisp3A">0</div>
+        <div class="scoreDisp2" id="scDisp3B">Small x 50</div>
+      </div>
+
+      <div class="scoreBarCont" id="sc4">
+        <div class="scoreBar" id="scBar4"></div>
+        <div class="scoreBarBack" id="scBarBack4"></div>
+        <div class="scoreDisp1" id="scDisp4A">0</div>
+        <div class="scoreDisp2" id="scDisp4B">Spike Penalty x -1000</div>
+      </div>
+
+      <div class="scoreBarCont" id="sc5">
+        <div class="scoreBar" id="scBar5"></div>
+        <div class="scoreBarBack" id="scBarBack5"></div>
+        <div class="scoreDisp1" id="scDisp5A">0</div>
+        <div class="scoreDisp2" id="scDisp5B">Off Track Penalty</div>
+      </div>
+      <!-- 
+    <div id="playAgain"><a href="#" onclick="location.reload(); return false;" ontouchstart="location.reload(); return false;"><img id="playAgainImage" src="./src/img/playAgain.svg"></href></div>
+    <div id="playAgainWords" ><a href="#" onclick="location.reload(); return false;">PLAY AGAIN</a></div> -->
+    </div>
+
+    <div id="mixer">
+      <div id="bgColor"></div>
+      <div id="obColor"></div>
+      <div id="chColor"></div>
+      <div id="etColor"></div>
+
+      <input type="checkbox" id="mix" /><br/>
+      <input type="text" id="fogColor" /><br/>
+      <input type="text" id="tubeColor" /><br/>
+      <input type="text" id="charColor" /><br/>
+      <button type="button" id="reloadTube">reload tube</button>
+      <button type="button" id="startMixer">mixer mode</button><br/>
+
+      <input
+        type="range"
+        min="1"
+        max="360"
+        value="50"
+        class="slider"
+        id="fogH"
+      /><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="fogS"
+      /><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="fogL"
+      /><br/><br/>
+
+      <input
+        type="range"
+        min="1"
+        max="360"
+        value="50"
+        class="slider"
+        id="tubeH"
+      /><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="tubeS"
+      /><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="tubeL"
+      /><br/><br/>
+
+      <input
+        type="range"
+        min="1"
+        max="360"
+        value="50"
+        class="slider"
+        id="chH"
+      /><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="chS"
+      /><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="chL"
+      /><br/><br/>
+
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="test1"
+      /><br/><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="test2"
+      /><br/><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="test3"
+      /><br/><br/>
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="test4"
+      /><br/><br/>
+    </div>
+
+    <canvas id="mycanvas"></canvas>
+  </body>
+</html>
