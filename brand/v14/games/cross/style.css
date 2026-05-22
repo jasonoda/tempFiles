@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative;
+}
+
+/* Start Menu Styles - Now in main styles.css */
+
+.instructionImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0;
+    width: 100%;
+}
+
+.instructionImage {
+    max-width: 100%;
+    height: auto;
+    width: 120px;
+}
+
+/* Play Button Styles - Now in main styles.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.instruction-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 10pt;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .5px;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cross-star-container {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cross-star {
+    font-size: 18px;
+    color: #FF8C42;
+    line-height: 1;
+}
+
+.cross-star.grey {
+    color: #ccc;
+}
+
+.grid-wrapper {
+    position: relative;
+    width: 316px;
+    height: 316px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5, 60px);
+    gap: 4px;
+    background-color: #ddd;
+    border: 1px solid #999;
+    padding: 0;
+    visibility: hidden;
+}
+
+.grid-cell {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #999;
+}
+
+.cells-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 316px;
+    height: 316px;
+    pointer-events: auto;
+}
+
+.letter-cell {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.letter-cell.selected {
+    background-color: #4CAF50 !important;
+    color: #000 !important;
+}
+
+.letter-cell.selected-word1 {
+    background-color: var(--cell-bg, #4CAF50) !important; /* Green for word1 */
+    color: #fff !important;
+}
+
+/* Word1 green takes precedence over word2 blue */
+.letter-cell.selected-word1.selected-word2 {
+    background-color: var(--cell-bg, #4CAF50) !important; /* Green for word1 - always wins */
+    color: #fff !important;
+}
+
+.letter-cell.selected-word2 {
+    background-color: var(--cell-bg, #2196F3) !important; /* Blue for word2 */
+    color: #fff !important;
+}
+
+/* Blank cells - black background, no text */
+.letter-cell[data-blank="true"] {
+    background-color: #000;
+    color: transparent;
+}
+
+/* Letter cells - grey background, black text */
+.letter-cell:not([data-blank="true"]) {
+    background-color: #ccc;
+    color: #000;
+}
+
+.controls {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.button-group-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.button-label {
+    height: 20px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.arrow-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    touch-action: manipulation; /* Prevent double-tap zoom and reduce click delay on mobile */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+#helpButton {
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    right: auto !important;
+    width: 15px;
+    height: 15px;
+    background: #707070;
+    border: 2px solid rgb(196, 196, 196);
+    outline: 2px solid #525252;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+#helpButton::before {
+    content: '?';
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Georgia', serif;
+    line-height: 1;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+}
+/* 
+#helpButton:hover {
+    background: #606060;
+} */
+
+.hint-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none;
+}
+
+.hint-button:hover {
+    box-shadow: none;
+    transform: translateY(-1px);
+}
+
+.hint-button:active {
+    transform: translateY(0);
+}
+
+.hint-button:disabled {
+    background-color: #C0C0C0;
+    cursor: not-allowed;
+}
+
+.hint-button .star {
+    color: #ffe571;
+}
+
+.hint-answers {
+    margin-top: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+@media (max-height: 699px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        gap: 10px;
+    }
+    .instruction-text {
+        margin-bottom: 4px;
+        min-height: 32px;
+        font-size: 9pt;
+    }
+    .controls {
+        gap: 16px;
+        margin-top: 8px;
+    }
+    .button-label {
+        height: 16px;
+        margin-bottom: 4px;
+    }
+    .hint-button {
+        margin-top: 8px;
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    .hint-answers {
+        margin-top: 6px;
+    }
+}
