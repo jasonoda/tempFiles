@@ -1,0 +1,586 @@
+@font-face {
+  font-family: "Birdy";
+  src: url("fonts/Birdy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0a0a;
+  font-family: "Birdy", sans-serif;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* iPad portrait (768×1024) — scaled to fit the browser window */
+#game-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+#game-stage {
+  position: relative;
+  aspect-ratio: 768 / 1024;
+  height: min(1024px, calc(100vh - 24px));
+  width: auto;
+  max-width: min(768px, calc(100vw - 24px));
+  overflow: hidden;
+  background: #111111;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 24px 80px rgba(0, 0, 0, 0.65);
+  touch-action: none;
+}
+
+.crt-text {
+  font-family: "Birdy", sans-serif;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 0.75;
+  overflow: visible;
+  -webkit-mask-image: repeating-linear-gradient(
+    90deg,
+    #000 0px,
+    #000 1px,
+    transparent 1px,
+    transparent 3px,
+    #000 3px,
+    #000 4px
+  );
+  mask-image: repeating-linear-gradient(
+    90deg,
+    #000 0px,
+    #000 1px,
+    transparent 1px,
+    transparent 3px,
+    #000 3px,
+    #000 4px
+  );
+  -webkit-mask-size: 4px 100%;
+  mask-size: 4px 100%;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-origin: border-box;
+  mask-origin: border-box;
+  -webkit-mask-clip: border-box;
+  mask-clip: border-box;
+  animation: crt-scan-mask 0.35s linear infinite;
+}
+
+@keyframes crt-scan-mask {
+  0% {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  100% {
+    -webkit-mask-position: 4px 0;
+    mask-position: 4px 0;
+  }
+}
+
+#game-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  display: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 10, 0.72) 100%
+  );
+}
+
+#toggleCRT {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+#toggleCRT.active {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+#glow-control {
+  position: fixed;
+  top: 76px;
+  right: 20px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 160px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.92);
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+
+#glow-control label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#glowSlider {
+  width: 100%;
+  accent-color: #ffffff;
+  cursor: pointer;
+}
+
+#glowValue {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#game-time {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  z-index: 20;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  padding: 0.2em 0.15em 0.1em;
+  box-sizing: content-box;
+}
+
+#game-time.color-magenta {
+  color: #ff00ff;
+}
+
+#game-time.color-cyan {
+  color: #00ffff;
+}
+
+#game-time.color-yellow {
+  color: #ffff00;
+}
+
+#game-time.hidden {
+  display: none;
+}
+
+.dev-only {
+  display: none !important;
+}
+
+.screen-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#start-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  pointer-events: none;
+}
+
+#start-screen.hidden {
+  display: none;
+}
+
+#start-btn {
+  margin: 0;
+  padding: 0.15em 0.35em;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  font: inherit;
+  font-size: clamp(2rem, 10vmin, 3.25rem);
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  animation: start-crt-blink 0.12s steps(2, end) infinite;
+}
+
+#start-btn.crt-text {
+  animation:
+    start-crt-blink 0.12s steps(2, end) infinite,
+    crt-scan-mask 0.35s linear infinite;
+}
+
+#start-btn::before,
+#start-btn::after {
+  display: none;
+}
+
+@keyframes start-crt-blink {
+  0%,
+  100% {
+    opacity: 0.68;
+    text-shadow:
+      0 0 14px rgba(255, 255, 255, 0.28),
+      1px 0 0 rgba(255, 50, 130, 0.55),
+      -1px 0 0 rgba(50, 220, 255, 0.55);
+  }
+  50% {
+    opacity: 0.88;
+    text-shadow:
+      0 0 16px rgba(255, 255, 255, 0.36),
+      1px 0 0 rgba(255, 50, 130, 0.65),
+      -1px 0 0 rgba(50, 220, 255, 0.65);
+  }
+}
+
+#restart-btn {
+  margin: 0;
+  padding: 0.3em 1.2em 0.2em;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.4rem;
+  line-height: 1.45;
+  letter-spacing: 0.12em;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#wrong-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(255, 30, 50, 0.65);
+}
+
+#wrong-flash.active {
+  animation: wrong-flash 2s ease-out forwards;
+}
+
+@keyframes wrong-flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  24% {
+    opacity: 0.1;
+  }
+  36% {
+    opacity: 0.75;
+  }
+  48% {
+    opacity: 0.08;
+  }
+  60% {
+    opacity: 0.5;
+  }
+}
+
+#target-callout {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65em;
+  text-transform: uppercase;
+  text-align: center;
+  pointer-events: none;
+}
+
+#target-callout.hidden {
+  display: none;
+}
+
+#target-callout.show {
+  display: flex;
+}
+
+#target-callout.flash {
+  animation: callout-flash 0.08s steps(2, end) 12;
+}
+
+#target-callout .callout-label,
+#target-callout .callout-name {
+  font-size: clamp(1.35rem, 8vw, 2.5rem);
+  line-height: 1.45;
+  color: inherit;
+  text-shadow: 0 0 28px currentColor;
+}
+
+#target-callout.color-magenta {
+  color: #ff00ff;
+}
+
+#target-callout.color-cyan {
+  color: #00ffff;
+}
+
+#target-callout.color-yellow {
+  color: #ffff00;
+}
+
+@keyframes callout-flash {
+  0% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.15;
+    filter: brightness(2);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+#miss-callout {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 41;
+  display: none;
+  font-size: clamp(2rem, 12vw, 3.5rem);
+  line-height: 1.45;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ff3355;
+  text-shadow: 0 0 32px rgba(255, 50, 80, 0.95);
+  pointer-events: none;
+}
+
+#miss-callout.hidden {
+  display: none;
+}
+
+#miss-callout.show {
+  display: block;
+}
+
+#miss-callout.flash {
+  animation: callout-flash 0.08s steps(2, end) 12;
+}
+
+#lives {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35em;
+  pointer-events: none;
+}
+
+#lives.hidden {
+  display: none;
+}
+
+#lives .life {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  display: inline-block;
+  padding: 0.2em 0.1em 0.1em;
+  box-sizing: content-box;
+  transition: opacity 0.12s ease, color 0.12s ease;
+}
+
+#lives.color-magenta .life:not(.used) {
+  color: #ff00ff;
+}
+
+#lives.color-cyan .life:not(.used) {
+  color: #00ffff;
+}
+
+#lives.color-yellow .life:not(.used) {
+  color: #ffff00;
+}
+
+#lives .life.used {
+  color: #e03030;
+}
+
+#game-over {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.72);
+  pointer-events: auto;
+}
+
+#game-over.hidden {
+  display: none;
+}
+
+.game-over-title {
+  margin: 0;
+  padding: 0.2em 0.35em 0.12em;
+  font-size: clamp(1.75rem, 8vmin, 2.5rem);
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: 0.15em;
+  text-align: center;
+  color: #fff;
+  box-sizing: content-box;
+}
+
+.game-over-survived-label {
+  margin: 0;
+  padding: 0.15em 0.25em 0.1em;
+  font-size: clamp(0.85rem, 3.5vmin, 1rem);
+  line-height: 1.45;
+  letter-spacing: 0.18em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  box-sizing: content-box;
+}
+
+.game-over-time {
+  margin: 0;
+  padding: 0.15em 0.25em 0.1em;
+  font-size: clamp(1.25rem, 5vmin, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  box-sizing: content-box;
+}
+
+@media (orientation: portrait) {
+  #game-time {
+    font-size: 1.65rem;
+  }
+
+  #lives .life {
+    font-size: 1.65rem;
+  }
+
+  #glow-control {
+    top: auto;
+    left: 24px;
+    right: auto;
+    bottom: 100px;
+    min-width: 200px;
+    padding: 14px 16px;
+  }
+
+  #toggleCRT {
+    top: auto;
+    bottom: 24px;
+    right: 24px;
+    padding: 14px 22px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #game-time {
+    font-size: 1.35rem;
+    top: 12px;
+    left: 16px;
+  }
+
+  #lives {
+    top: 12px;
+    right: 16px;
+  }
+
+  #lives .life {
+    font-size: 1.35rem;
+  }
+
+}

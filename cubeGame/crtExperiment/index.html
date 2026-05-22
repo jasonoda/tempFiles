@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRT Three.js Test</title>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #2a1510;
+      font-family: Arial, sans-serif;
+    }
+
+    #root {
+      position: fixed;
+      inset: 0;
+    }
+
+    #cameraDebug {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.75);
+      color: #eee;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      white-space: pre;
+      pointer-events: none;
+      user-select: text;
+    }
+
+    #sectionNav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: min(96vw, 920px);
+      padding: 0 12px;
+    }
+
+    #sectionNav button {
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(0, 0, 0, 0.72);
+      color: rgba(255, 255, 255, 0.92);
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    #sectionNav button.active {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.75);
+    }
+
+    #toggleCRT {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.75);
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.08) 0px,
+        rgba(0, 0, 0, 0.08) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      mix-blend-mode: multiply;
+    }
+
+    .vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 40%,
+        rgba(0, 0, 10, 0.72) 100%
+      );
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <button id="toggleCRT">CRT ON</button>
+  <pre id="cameraDebug"></pre>
+
+  <nav id="sectionNav" aria-label="Website sections"></nav>
+
+  <script type="module" src="./scene.js"></script>
+</body>
+</html>
