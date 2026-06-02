@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>NIGHTFALL SURVIVORS</title>
+
+    <!-- <link rel="shortcut icon" href="./src/img/tabIcon.png"> -->
+
+    <!--css---------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="shared.css" /> -->
+
+    <!-- Load the SDK before your game code -->
+    <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "gsap": "./libs/gsap.js",
+        "pixi.js": "./libs/pixi.mjs",
+        "matter-js": "./libs/matter.js",
+        "howler": "./libs/howler.js"
+      }
+    }
+    </script>
+
+
+    <!--google fonts---------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <!--meta---------------------------------------------------------------------------------------------------------- -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script>
+      window.addEventListener('load', (event) => {
+        var loadJS = function(url, implementationCode){
+          
+          var scriptTag = document.createElement('script');
+          scriptTag.src = url;
+          scriptTag.type = 'module';
+          scriptTag.id = 'main';
+          scriptTag.onload = implementationCode;
+          scriptTag.onreadystatechange = implementationCode;
+
+          document.head.appendChild(scriptTag);
+        };
+        loadJS('./src/index.js', () => {
+          // window.parent.postMessage(JSON.stringify({
+          //   type: 'GameLoaded'
+          // }), "*");
+        });
+      });
+
+    </script>
+
+</head>
+
+<body>
+
+  <div id="pushDown"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  <div id="pushDown"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  <div id="pushDown"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  <div id="pushDown"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+    <div id="loadingImage"></div>
+  <div id="loadingBack"></div>
+
+  <div id="useFont">A</div>
+  <div id="useFont2">A</div>
+  <div id="useFont3">A</div>
+  <div id="useFont4">A</div>
+  <div id="useFont5">A</div>
+  <div id="useFont6">A</div>
+  <div id="feedback">A</div>
+
+  <div id="stealthText">STEALTH</div>
+
+  <div id="storePurchaseFlash" aria-hidden="true"></div>
+
+  <div id="bulletShieldHud">
+    <img id="bulletShieldGraphic" src="./src/img/UI/shield.png" alt="" draggable="false">
+    <div id="bulletShieldText">BULLET SHIELD USED!</div>
+  </div>
+
+  <!-- New Score and Time Display -->
+  <div id="scoreTimeContainer">
+    <img id="scoreTimeBack" src="./src/img/UI/scoreTimeBack2x.png" alt="" draggable="false">
+    <div id="scoreDisplay">0</div>
+    <div id="timeDisplay">0:00</div>
+  </div>
+
+  <div id="gameplayHudLandscape" aria-hidden="true">
+    <div id="scoreDisplayLandscape">0</div>
+    <div id="timeDisplayLandscape">0:00</div>
+  </div>
+
+  <button type="button" id="pauseButton" aria-label="Pause game" style="display: none;">
+    <span class="pause-button-icon pause-button-icon-pause" aria-hidden="true"></span>
+    <span class="pause-button-icon pause-button-icon-play" aria-hidden="true"></span>
+  </button>
+
+  <button type="button" id="muteButton" aria-label="Toggle sound" style="display: none;">
+    <img id="muteIcon" src="./src/img/soundButton_on.png" alt="" draggable="false">
+  </button>
+
+  <div id="coinLevelMeter" class="coin-level-meter-wrap" aria-hidden="true">
+    <div class="coin-level-meter-bar">
+      <div id="coinLevelMeterTrack" class="coin-level-meter-track">
+        <div id="coinLevelMeterFill" class="coin-level-meter-fill"></div>
+      </div>
+    </div>
+    <img class="coin-level-meter-frame" src="./src/img/UI/meterBorder.png" width="236" height="22" alt="">
+  </div>
+
+  <div id="startMenuBackdrop"></div>
+
+  <div id="highScoreDisplay">HIGH: <span id="highScoreValue">0</span></div>
+
+  <div id="upgradeCounter">
+    <img class="upgrade-left" src="./src/img/splash/upgradeLeft.png" width="76" height="17" alt="">
+    <div class="upgrade-mid">
+      <span id="upgradeNumber">0</span>
+    </div>
+    <img class="upgrade-right" src="./src/img/splash/upgradeRight.png" width="7" height="17" alt="">
+  </div>
+
+  <div id="startMenu">
+    <div id="splashAnimation">
+      <img class="splash-frame splash-frame-1" src="./src/img/splash/splash1.png" width="334" height="219" alt="">
+      <img class="splash-frame splash-frame-2" src="./src/img/splash/splash2.png" width="334" height="219" alt="">
+      <div class="splash-shine" aria-hidden="true"></div>
+      <img id="editionTitle" class="edition-title" src="./src/img/splash/editionTitle.png" width="61" height="7" alt="">
+    </div>
+    <div id="startMenuButtons">
+      <div class="startButAnimation">
+        <img class="start-but-frame start-but-frame-1" src="./src/img/splash/startBut1.png" width="103" height="43" alt="">
+        <img class="start-but-frame start-but-frame-2" src="./src/img/splash/startBut2.png" width="103" height="43" alt="">
+      </div>
+      <button type="button" id="playButton" aria-label="Play"></button>
+      <button type="button" id="instructionsButton" aria-label="Instructions"></button>
+    </div>
+  </div>
+
+  <div id="progressDiv">
+    <button type="button" id="progressCloseCornerButton" class="progress-close-corner" aria-label="Close progress">X</button>
+    <div class="progress-landscape-chrome">
+      <div class="progress-landscape-top-bar">
+        <div class="progress-landscape-jewel-group">
+          <img class="progress-landscape-jewel-icon" src="./src/img/coin/jewel.png" width="10" height="20" alt="">
+          <div class="progress-landscape-jewel-count">
+            <span class="progress-landscape-jewel-x">x</span>
+            <span id="progressJewelCountLandscape" class="progress-landscape-jewel-amount">0</span>
+          </div>
+        </div>
+      </div>
+      <p class="progress-landscape-heading">PROGRESS</p>
+      <p class="progress-landscape-title">SPEND JEWELS TO GAIN PERMANENT UPGRADES</p>
+    </div>
+    <div class="progress-content">
+      <div class="progress-top-animation">
+        <img class="progress-top-frame progress-top-1" src="./src/img/progress/progress_top1.png" width="264" height="174" alt="">
+        <img class="progress-top-frame progress-top-2" src="./src/img/progress/progress_top2.png" width="264" height="174" alt="">
+        <span id="progressJewelCount" class="progress-jewel-count">0</span>
+      </div>
+
+      <img class="go-tally-top progress-tally-top-header" src="./src/img/gameover/go_tallyTop.png" width="270" height="14" alt="">
+
+      <div class="progress-grid">
+        <button type="button" class="progress-cell" data-upgrade="damage" data-tooltip="BIGGER SHOT" aria-label="Bigger shot upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/damage.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="speedShot" data-tooltip="FASTER SHOT" aria-label="Faster shot upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/speedShot.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="extra" data-tooltip="EXTRA SHOT" aria-label="Extra shot upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/extra.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="magnet" data-tooltip="MAGNET" aria-label="Magnet upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/magnet.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="speed" data-tooltip="FOOT SPEED" aria-label="Speed upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/speed.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="jewelShot" data-tooltip="JEWEL KILL" aria-label="Jewel kill upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/jewelShot.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="heart" data-tooltip="HEART" aria-label="Heart upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/heart.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="bulletShield" data-tooltip="BULLET SHIELD" aria-label="Bullet shield upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/bulletShield.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+        <button type="button" class="progress-cell" data-upgrade="coinShot" data-tooltip="COIN SHOT" aria-label="Coin shot upgrade">
+          <div class="progress-cell-inner">
+            <img class="progress-frame" src="./src/img/progress/frame.png" width="66" height="66" alt="">
+            <img class="progress-icon" src="./src/img/progress/storeIcons/coinShot.png" width="54" height="54" alt="">
+          </div>
+          <span class="progress-cell-count">20</span>
+        </button>
+      </div>
+
+      <img class="go-tally-top progress-tally-top-flip" src="./src/img/gameover/go_tallyTop.png" width="270" height="14" alt="">
+
+      <button type="button" id="closeProgressButton" class="progress-next-button" aria-label="Close progress">NEXT</button>
+    </div>
+  </div>
+
+  <div id="instructionsOverlay">
+      <div id="instructionsContainer">
+          <div class="instructions-image-wrap">
+            <img id="instructionsImage" src="./src/img/splash/instructionsDesktop.png" width="148" height="193" alt="Instructions">
+          </div>
+          <div id="instructionsLandscapeContent" class="instructions-landscape-content" aria-hidden="true">
+            <div class="inst-landscape-title">INSTRUCTIONS</div>
+            <div class="inst-landscape-block">DRAG TO MOVE</div>
+            <div class="inst-landscape-rule" aria-hidden="true"></div>
+            <div class="inst-landscape-block">HERO WILL AUTO-AIM AT CLOSEST ENEMY</div>
+            <div class="inst-landscape-rule" aria-hidden="true"></div>
+            <div class="inst-landscape-block">COLLECT <span class="inst-landscape-highlight">COINS</span> TO EARN POWER-UPS</div>
+            <div class="inst-landscape-rule" aria-hidden="true"></div>
+            <div class="inst-landscape-block">COLLECT <span class="inst-landscape-highlight">JEWELS</span> TO EXCHANGE FOR PERMANENT UPGRADES</div>
+          </div>
+          <button type="button" id="closeInstructionsButton" aria-label="View power-up list">NEXT</button>
+      </div>
+  </div>
+
+  <div id="powerUpGuideOverlay">
+    <div id="powerUpGuideContainer">
+      <div class="power-up-guide-header">
+        <div class="power-up-guide-title">POWER-UP GUIDE</div>
+      </div>
+      <div id="powerUpGuideScroll" class="power-up-guide-scroll">
+        <div id="powerUpGuideGrid" class="power-up-guide-grid"></div>
+      </div>
+      <button type="button" id="powerUpGuideBackButton" class="power-up-guide-back">BACK TO MENU</button>
+    </div>
+  </div>
+
+  <div id="gameOverDiv">
+    <div class="game-over-content">
+      <div class="go-landscape-columns">
+        <div class="go-panel go-panel-left">
+          <div class="go-top-animation">
+            <img class="go-top-frame go-top-1" src="./src/img/gameover/go_top1.png" width="119" height="45" alt="">
+            <img class="go-top-frame go-top-2" src="./src/img/gameover/go_top2.png" width="119" height="45" alt="">
+          </div>
+
+          <div class="go-meter-wrap">
+            <div class="go-meter-bar">
+              <div id="go_progressBar" class="go-progress-track">
+                <div id="go_progressBarFill" class="go-progress-fill"></div>
+              </div>
+            </div>
+            <img class="go-meter-frame" src="./src/img/gameover/go_meter.png" width="153" height="33" alt="">
+          </div>
+
+          <div id="go_time" class="go-time"></div>
+
+          <div class="go-final-reveal">
+            <div id="go_score" class="go-score" aria-hidden="true">&nbsp;</div>
+          </div>
+        </div>
+
+        <div class="go-panel go-panel-right">
+          <img class="go-tally-top go-tally-top-header" src="./src/img/gameover/go_tallyTop.png" width="135" height="7" alt="">
+
+          <div class="go-stats">
+            <div class="go-stat-row">
+              <span class="go-stat-label">KILLS</span>
+              <span id="go_kills" class="go-stat-value"></span>
+            </div>
+            <div class="go-stat-row">
+              <span class="go-stat-label">COINS</span>
+              <span id="go_coins" class="go-stat-value"></span>
+            </div>
+            <div class="go-stat-row">
+              <span class="go-stat-label">JEWELS</span>
+              <span id="go_jewels" class="go-stat-value"></span>
+            </div>
+            <div class="go-stat-row">
+              <span class="go-stat-label">LEVEL x30</span>
+              <span id="go_levels" class="go-stat-value"></span>
+            </div>
+            <div class="go-stat-row">
+              <span class="go-stat-label">LIFE BONUS</span>
+              <span id="go_lifeBonus" class="go-stat-value"></span>
+            </div>
+          </div>
+
+          <img class="go-tally-top go-tally-top-flip" src="./src/img/gameover/go_tallyTop.png" width="135" height="7" alt="">
+        </div>
+      </div>
+
+      <button type="button" id="gameOverNextButton" class="go-next-button" aria-label="Next" aria-hidden="true">
+        <img src="./src/img/gameover/go_next.png" width="103" height="8" alt="">
+      </button>
+    </div>
+  </div>
+
+  <!-- loading stuff -->
+
+  <img id="stickIn" src="./src/img/stickIn.svg">
+  <img id="stickOut" src="./src/img/stickOut.svg">
+
+  <div id="introTextContainer" aria-hidden="true">
+    <div id="introLine1" class="intro-line">
+      <span class="intro-word-wrap"><span class="intro-word">...AND</span></span>
+      <span class="intro-word-wrap"><span class="intro-word">ON</span></span>
+      <span class="intro-word-wrap"><span class="intro-word">HIS</span></span>
+      <span class="intro-word-wrap"><span class="intro-word">WAY</span></span>
+      <span class="intro-word-wrap"><span class="intro-word">HOME...</span></span>
+    </div>
+    <div id="introLine2" class="intro-line">
+      <span class="intro-word-wrap"><span class="intro-word">...NIGHT</span></span>
+      <span class="intro-word-wrap"><span class="intro-word">FELL</span></span>
+    </div>
+  </div>
+
+  <!-- project -->
+
+  <canvas id="mycanvas"></canvas>
+
+  <!-- HTML Hearts Container -->
+  <div id="htmlHeartsContainer">
+    <img src="./src/img/UI/heart.png" class="heart" width="30" height="28" alt="heart">
+    <img src="./src/img/UI/heart.png" class="heart" width="30" height="28" alt="heart">
+    <img src="./src/img/UI/heart.png" class="heart" width="30" height="28" alt="heart">
+    <img src="./src/img/UI/heart.png" class="heart" width="30" height="28" alt="heart">
+  </div>
+
+  <div id="powerUpFader" aria-hidden="true"></div>
+
+  <!-- Upgrade counter -->
+  <div id="htmlPowerUpContainer" style="display: none;">
+    <img class="power-up-back" src="./src/img/puMenu/powerUpBack.png" width="380" height="632" alt="">
+    <div class="power-up-options">
+      <div class="power-up-row" data-index="0">
+        <img class="power-up-icon" src="./src/img/puMenu/pi_fireballs.png" width="66" height="66" alt="Power Up">
+        <img class="power-up-window" src="./src/img/puMenu/puWindowGreen.png" width="310" height="142" alt="">
+        <div class="power-up-title">FIREBALL</div>
+        <div class="power-up-description">INSTANTLY CLEARS ALL ENEMIES IN ITS PATH</div>
+        <div class="power-up-levels">
+          <div class="power-up-dots-wrap">
+            <img class="power-up-dots-bg" src="./src/img/puMenu/dots_3.png" width="52" height="24" alt="">
+            <div class="power-up-dots-fill"></div>
+          </div>
+        </div>
+      </div>
+      <div class="power-up-row" data-index="1">
+        <img class="power-up-icon" src="./src/img/puMenu/pi_frost.png" width="66" height="66" alt="Power Up">
+        <img class="power-up-window" src="./src/img/puMenu/puWindowRed.png" width="310" height="142" alt="">
+        <div class="power-up-title">FIREBALL</div>
+        <div class="power-up-description">FREEZE ENEMIES IN PLACE</div>
+        <div class="power-up-levels">
+          <div class="power-up-dots-wrap">
+            <img class="power-up-dots-bg" src="./src/img/puMenu/dots_2.png" width="40" height="24" alt="">
+            <div class="power-up-dots-fill"></div>
+          </div>
+        </div>
+      </div>
+      <div class="power-up-row" data-index="2">
+        <img class="power-up-icon" src="./src/img/puMenu/pi_lightningStrike.png" width="66" height="66" alt="Power Up">
+        <img class="power-up-window" src="./src/img/puMenu/puWindowBlue.png" width="310" height="142" alt="">
+        <div class="power-up-title">FIREBALL</div>
+        <div class="power-up-description">CALL DOWN LIGHTNING ON ENEMIES</div>
+        <div class="power-up-levels">
+          <div class="power-up-dots-wrap">
+            <img class="power-up-dots-bg" src="./src/img/puMenu/dots_3.png" width="52" height="24" alt="">
+            <div class="power-up-dots-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="htmlPowerUpContainerLandscape" style="display: none;" aria-hidden="true">
+    <div class="pu-landscape-options">
+      <div class="pu-landscape-row" data-index="0">
+        <div class="pu-landscape-icon-col">
+          <img class="pu-landscape-icon" src="./src/img/puMenu/pi_fireballs.png" width="33" height="33" alt="">
+          <div class="pu-landscape-levels">
+            <span class="pu-landscape-level-text">1/3</span>
+          </div>
+        </div>
+        <div class="pu-landscape-text">
+          <div class="pu-landscape-name">FIREBALL</div>
+          <div class="pu-landscape-desc">instantly clears all enemies in its path</div>
+        </div>
+      </div>
+      <div class="pu-landscape-row" data-index="1">
+        <div class="pu-landscape-icon-col">
+          <img class="pu-landscape-icon" src="./src/img/puMenu/pi_frost.png" width="33" height="33" alt="">
+          <div class="pu-landscape-levels">
+            <span class="pu-landscape-level-text">1/2</span>
+          </div>
+        </div>
+        <div class="pu-landscape-text">
+          <div class="pu-landscape-name">FREEZE</div>
+          <div class="pu-landscape-desc">freeze enemies in place</div>
+        </div>
+      </div>
+      <div class="pu-landscape-row" data-index="2">
+        <div class="pu-landscape-icon-col">
+          <img class="pu-landscape-icon" src="./src/img/puMenu/pi_lightningStrike.png" width="33" height="33" alt="">
+          <div class="pu-landscape-levels">
+            <span class="pu-landscape-level-text">1/3</span>
+          </div>
+        </div>
+        <div class="pu-landscape-text">
+          <div class="pu-landscape-name">LIGHTNING</div>
+          <div class="pu-landscape-desc">call down lightning on enemies</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
