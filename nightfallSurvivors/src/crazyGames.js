@@ -14,8 +14,11 @@ const SDK_INIT_MAX_ATTEMPTS = 2;
 /** Set true only for local SDK debugging. */
 const DEBUG_LOGGING = false;
 
+/** When true, skip CrazyGames SDK entirely and use localStorage for saves. */
+export const LOCAL_MODE = true;
+
 /** Flip to false to allow the game on any host (dev only — ship with true). */
-export const SITELOCK_ENABLED = true;
+export const SITELOCK_ENABLED = false;
 
 const ENV_LOCAL = 'local';
 const ENV_CRAZYGAMES = 'crazygames';
@@ -439,6 +442,14 @@ export const CrazyGamesAPI = {
    */
   async init() {
     log('init: starting');
+
+    if (LOCAL_MODE) {
+      log('init: skipped (LOCAL_MODE is true)');
+      this.environment = ENV_DISABLED;
+      this.ready = true;
+      this.initialized = false;
+      return this.environment;
+    }
 
     const sdk = getSdk();
     if (!sdk) {

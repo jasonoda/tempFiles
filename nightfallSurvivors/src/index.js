@@ -5,7 +5,7 @@ import { Input } from "./input.js";
 import { Sounds } from "./sounds.js";
 import { Utilities } from "./u.js";
 import { UI } from "./ui.js";
-import { CrazyGamesAPI } from "./crazyGames.js";
+import { CrazyGamesAPI, LOCAL_MODE } from "./crazyGames.js";
 import { LocalState } from "./localState.js";
 //------------------------------------------------------------
 
@@ -55,9 +55,13 @@ function startGameLoop() {
 async function bootSdk() {
   try {
     await CrazyGamesAPI.init();
+    engine.initMuteState();
+    if (LOCAL_MODE) {
+      refreshPersistentState();
+      return;
+    }
     CrazyGamesAPI.loadingStart();
     CrazyGamesAPI.setupGameModule(engine);
-    engine.initMuteState();
     CrazyGamesAPI.setupUserModule({ fetchUserOnSetup: true });
     await CrazyGamesAPI.setupDataModule();
     refreshPersistentState();
